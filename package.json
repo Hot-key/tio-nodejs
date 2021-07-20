@@ -1,0 +1,19 @@
+{
+  "name": "tio-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/tunnel": "^0.0.3",
+    "axios": "^0.21.0",
+    "pako": "^2.0.3",
+    "tunnel": "^0.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "@types/pako": "^1.0.2"
+  },
+  "scripts": {},
+  "author": "Hot-key",
+  "license": "MIT"
+}
