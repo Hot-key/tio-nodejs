@@ -2,9 +2,8 @@
   "name": "tio-nodejs",
   "version": "1.0.0",
   "description": "node.js tio.run client",
-  "main": "index.js",
+  "main": "./dist/Runner",
   "dependencies": {
-    "@types/tunnel": "^0.0.3",
     "axios": "^0.21.0",
     "pako": "^2.0.3"
   },
