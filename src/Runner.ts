@@ -6,6 +6,15 @@ import ByteArrayHelper from "./Function/ByteArrayHelper";
 import RandomGenerator from "./Function/RandomGenerator";
 
 export default class Runner {
+	public static UpdateConfig(config: { baseUrl?: string; tioRunUrl?: string }) {
+		if (config.baseUrl) {
+			Define.BaseUrl = config.baseUrl;
+		}
+		if (config.tioRunUrl) {
+			Define.TioRunUrl = config.tioRunUrl;
+		}
+	}
+
 	public static async Run(lang: string, code: string, input: string = "") {
 		let buffer = Runner.GetBufferFromTioInput(new TioInput(lang, code, input));
 		return await Runner.SendTioRequest(buffer);
@@ -62,7 +71,7 @@ export default class Runner {
 		let error = "";
 
 		try {
-			let tioResult = await axios.post(`https://tio.run${Define.TioRunURL}/${RandomGenerator.GetRandomBits(128)}`, sendBuffer, {
+			let tioResult = await axios.post(`${Define.BaseUrl}${Define.TioRunUrl}/${RandomGenerator.GetRandomBits(128)}`, sendBuffer, {
 				responseType: "arraybuffer",
 			});
 			let rawOutput = "";
@@ -82,7 +91,7 @@ export default class Runner {
 
 			return results;
 		} catch (error) {
-			return ["", "Error: 알 수 없는 오류 발생"];
+			return ["", "Error: unknown error"];
 		}
 	}
 }
