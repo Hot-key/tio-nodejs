@@ -4,7 +4,6 @@ import TioInput from "./DataType/TioInput";
 import Define from "./Define";
 import ByteArrayHelper from "./Function/ByteArrayHelper";
 import RandomGenerator from "./Function/RandomGenerator";
-import tunnel from "tunnel";
 
 export default class Runner {
 	public static async Run(lang: string, code: string, input: string = "") {
